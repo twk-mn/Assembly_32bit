@@ -16,7 +16,7 @@ strlen:
 nextchar:
 - Compares teh byte pointed at in EAX to 0.
 - If ZF is set, jump to finished
-- If zf not set, increadse EAX with 1 byte.
+- If ZF not set, increadse EAX with 1 byte.
 - Jump to nextchar (looping)
 
 finished:
