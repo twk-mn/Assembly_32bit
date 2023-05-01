@@ -1,4 +1,4 @@
-#Hello World (32bit assembly)
+# Hello World (32bit assembly)
 
 - Moves a variable with 'Hello World!'-sting with LF char into the registry after memory space have been created (13 bytes).
 - Writes it to STOUT file.
@@ -9,10 +9,11 @@
 - Interupt the program with the kernel
 
 
-##Instructions:
+## Instructions:
 
 Compile:
-``` nasm -f elf lesson_1_2_helloworld.asm
+```
+nasm -f elf lesson_1_2_helloworld.asm
 ```
 Link (for 64bit elf_i386 is req):
 ```
