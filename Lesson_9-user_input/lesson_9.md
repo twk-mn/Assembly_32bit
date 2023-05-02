@@ -4,9 +4,11 @@
 
 ### lesson_9.asm
 .data:
--
+- Strings asking for users data (msg1)
+- Returns Hello <user-input> (msg2)
 
-.bss
+.bss (Block Started by Symbol)
+- Reserves 255 bytes for user input in memory
 - 
 
 _start:
