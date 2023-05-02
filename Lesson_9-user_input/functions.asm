@@ -1,6 +1,5 @@
 ; int slen(str msg)
 ; Str len calc func
-
 slen:
     push    ebx
     mov     ebx, eax
@@ -26,6 +25,9 @@ sprint:
     call    slen
 
     mov     edx, eax
+    pop     eax
+
+    mov     ecx, eax
     mov     ebx, 1
     mov     eax, 4
     int     80h

@@ -8,7 +8,7 @@ SECTION .bss
 sinput:     resb    255                                 ; Reserves 255 bytes in memory to store the users input sting
 
 SECTION .text
-global _start
+global  _start
 
 _start:
 
