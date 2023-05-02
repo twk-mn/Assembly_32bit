@@ -37,21 +37,6 @@ sprint:
     pop     edx
     ret
 
-; void stringLF(str msg)
-; Str printing with LF func
-
-sprintLF:
-    call    sprint
-
-    push    eax
-    mov     eax, 0Ah
-    push    eax
-    mov     eax, esp
-    call    sprint
-    pop     eax
-    pop     eax
-    ret
-
 ; void exit()
 ; Exit prog andn restore resources
 quit:
