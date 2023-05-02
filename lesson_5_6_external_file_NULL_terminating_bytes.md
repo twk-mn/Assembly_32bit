@@ -11,7 +11,7 @@ _start:
 - ...then the same with msg2
 - Finish with calling quit in lesson_5_6_functions.asm
 
-### lesson_5_6_function.asm:
+### lesson_5_6_functions.asm:
 
 slen:
 - Pushes EBX to the stack
