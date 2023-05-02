@@ -18,7 +18,6 @@ finished:
 
 ; void sprint (str msg)
 ; Str printing func
-
 sprint:
     push    edx
     push    ecx
@@ -31,7 +30,6 @@ sprint:
     mov     eax, 4
     int     80h
 
-
     pop     ebx
     pop     ecx
     pop     edx
@@ -41,7 +39,7 @@ sprint:
 ; Str printing with LF func
 
 sprintLF:
-    call    eax
+    call    sprint
 
     push    eax
     mov     eax, 0Ah

@@ -24,7 +24,7 @@ _start:
     mov     eax, msg2
     call    sprint
 
-    mov     eax, sinput
-    call    sprint
+    mov     eax, sinput     ; Move the buffer into eax (the input now contains a LF)
+    call    sprint          ; Call the print func
     
     call    quit
