@@ -55,7 +55,7 @@ sprintLF:
 ; void exit()
 ; Exit prog andn restore resources
 quit:
-    mov     ebx, 1
-    mov     eax, 4
+    mov     ebx, 0
+    mov     eax, 1
     int     80h
     ret
