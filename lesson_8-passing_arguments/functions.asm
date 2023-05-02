@@ -43,7 +43,7 @@ sprint:
 sprintLF:
     call    sprint
 
-    push    push eax
+    push    eax
     mov     eax, 0Ah
     push    eax
     mov     eax, esp
