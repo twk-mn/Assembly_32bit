@@ -7,11 +7,11 @@
 
 _start:
 - Move msg1 address into EAX
-- Call sprint function in functions.asm
+- Call sprint function in lesson_5_6_functions.asm
 - ...then the same with msg2
-- Finish with calling quit in functions.asm
+- Finish with calling quit in lesson_5_6_functions.asm
 
-### function.asm:
+### lesson_5_6_function.asm:
 
 slen:
 - Pushes EBX to the stack
