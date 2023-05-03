@@ -11,6 +11,11 @@ nextchar:
     inc     eax
     jmp     nextchar
 
+finished:
+    sub     eax, ebx
+    pop     ebx
+    ret
+
 ; void sprint(str msg)
 ; Str printing func
 sprint:
