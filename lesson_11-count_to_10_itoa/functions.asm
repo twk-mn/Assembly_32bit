@@ -9,7 +9,7 @@ iprint:
     mov     ecx, 0      ; counter of how many bytes we need to print in the end
 
 divideLoop:
-    inc     ecx         ; count each byte to print, nunb of char
+    inc     ecx         ; count each byte to print, numb of char
     mov     edx, 0      ; empty EDX
     mov     esi, 10     ; move 10 into ESI
     idiv    esi         ; divide EAX with ESI
@@ -40,7 +40,7 @@ iprintLF:
     push    eax         ; push EAX to the stack while so we can recover it after using EAX in this func
     mov     eax, 0Ah    ; move the ASCii for LF into EAX
     push    eax         ; Push the LF onto the stack so we can get the address
-    mov     eax, esp    ; Move the current stack pointer inti EAX for the sprint func
+    mov     eax, esp    ; Move the current stack pointer into EAX for the sprint func
     call    sprint      ; call sprint func
     pop     eax         ; remove LF from stack
     pop     eax         ; restore the original value for EAX
