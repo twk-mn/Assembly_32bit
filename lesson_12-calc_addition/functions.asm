@@ -39,7 +39,7 @@ iprintLF:
     push    eax
     mov     eax, 0Ah
     push    eax
-    mov     esp, eax
+    mov     eax, esp
     call    sprint
     pop     eax
     pop     eax
@@ -102,6 +102,6 @@ sprintLF:
 ; Exit prog and restore resources
 quit:
     mov     ebx, 0
-    mov     eax, 4
+    mov     eax, 1
     int     80h
     ret
