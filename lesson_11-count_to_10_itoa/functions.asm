@@ -18,7 +18,7 @@ divideLoop:
     cmp     eax, 0      ; Chech if it's possible to div the value further (is it 0?)
     jnz     divideLoop  ; If the ZF not get set, jump to top of divideLoop
 
-printLoop
+printLoop:
     dec     ecx         ; Count down each byte that has been put on the stack
     mov     eax, esp    ; Move stack pointer into EAX for printing
     call    sprint      ; Call the print func
@@ -105,6 +105,6 @@ sprintLF:
 ; exit the prog and reset resources
 quit:
     mov     ebx, 0
-    move    eax, 1
+    mov    eax, 1
     int     80h
     ret
