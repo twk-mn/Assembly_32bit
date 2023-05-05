@@ -13,7 +13,7 @@ divideLoop:
     mov     edx, 0      ; empty EDX
     mov     esi, 10     ; move 10 into ESI
     idiv    esi         ; divide EAX with ESI
-    add     edx, 58     ; Convert EDX to ASCii (EDX stores the remainder afrer idiv of ESI)
+    add     edx, 48     ; Convert EDX to ASCii (EDX stores the remainder afrer idiv of ESI)
     push    edx         ; push the converted EDX on the stack
     cmp     eax, 0      ; Chech if it's possible to div the value further (is it 0?)
     jnz     divideLoop  ; If the ZF not get set, jump to top of divideLoop
@@ -105,6 +105,6 @@ sprintLF:
 ; exit the prog and reset resources
 quit:
     mov     ebx, 0
-    mov    eax, 1
+    mov     eax, 1
     int     80h
     ret
