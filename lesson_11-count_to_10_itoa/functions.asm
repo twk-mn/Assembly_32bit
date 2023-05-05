@@ -13,12 +13,12 @@ divideLoop:
     mov     edx, 0      ; empty EDX
     mov     esi, 10     ; move 10 into ESI
     idiv    esi         ; divide EAX with ESI
-    add     edx, 58     ; Convert EDX to ASCii (EDX stores the remainder afrer idiv of ESI)
+    add     edx, 48     ; Convert EDX to ASCii (EDX stores the remainder afrer idiv of ESI)
     push    edx         ; push the converted EDX on the stack
     cmp     eax, 0      ; Chech if it's possible to div the value further (is it 0?)
     jnz     divideLoop  ; If the ZF not get set, jump to top of divideLoop
 
-printLoop
+printLoop:
     dec     ecx         ; Count down each byte that has been put on the stack
     mov     eax, esp    ; Move stack pointer into EAX for printing
     call    sprint      ; Call the print func
@@ -44,4 +44,67 @@ iprintLF:
     call    sprint      ; call sprint func
     pop     eax         ; remove LF from stack
     pop     eax         ; restore the original value for EAX
+    ret
+
+; int slen(Str msg)
+; Str len calc func
+
+slen:
+    push    ebx
+    mov     ebx, eax
+
+nextchar:
+    cmp     byte [eax], 0
+    jz      finished
+    inc     eax
+    jmp     nextchar
+
+finished:
+    sub     eax, ebx
+    pop     ebx
+    ret
+
+; void sprint(str msg)
+;Str printing func
+
+sprint:
+    push    edx
+    push    ecx
+    push    ebx
+    push    eax
+    call    slen
+
+    mov     edx, eax
+    pop     eax
+
+    mov     ecx, eax
+    mov     ebx, 1
+    mov     eax, 4
+    int     80h
+
+    pop     ebx
+    pop     ecx
+    pop     edx
+    ret
+
+; void sprintLF
+; Str print w LF func
+sprintLF:
+    call    sprint
+
+    push    eax
+    mov     eax, 0Ah
+    push    eax
+    mov     eax, esp
+    call    sprint
+    pop     eax
+    pop     eax
+    ret
+
+; void exit()
+; exit the prog and reset resources
+quit:
+    mov     ebx, 0
+    mov     eax, 1
+    int     80h
     ret
