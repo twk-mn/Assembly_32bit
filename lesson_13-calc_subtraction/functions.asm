@@ -9,7 +9,7 @@ iprint:
     mov     ecx, 0
 
 divideLoop:
-    int     ecx
+    inc     ecx
     mov     edx, 0
     mov     esi, 10
     idiv    esi
@@ -107,5 +107,5 @@ sprintLF:
 quit:
     mov     ebx, 0
     mov     eax, 1
-    int     80Ah
+    int     80h
     ret
