@@ -1,6 +1,5 @@
 ;void iprint(int msg)
 ; Integer printing function (itoa)
-
 iprint:
     push    eax
     push    ecx
@@ -54,13 +53,13 @@ slen:
 
 nextchar:
     cmp     byte [eax], 0
-    jz     finished
+    jz      finished
     inc     eax
     jmp     nextchar
 
 finished:
     sub     eax, ebx
-    pop     eax
+    pop     ebx
     ret
 
 ; void sprint(str msg)
@@ -73,9 +72,6 @@ sprint:
     call    slen
 
     mov     edx, eax
-    pop     eax
-
-    mov     ecx, eax
     pop     eax
 
     mov     ecx, eax
