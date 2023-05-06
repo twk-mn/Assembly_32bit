@@ -6,6 +6,11 @@ Program that subtracks a value from another, and prints the result (does not tak
 ### lesson_13.asm
 
 _start:
+- Assigning 90 to EAX
+- Assigning 9 to EBX
+- Subtracting EBX from EAX
+- Call iprintLF
+- Call quit
 
 ### functions.asm:
 The same code as in Lesson 11 & 12.
