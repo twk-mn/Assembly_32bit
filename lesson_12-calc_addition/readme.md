@@ -3,7 +3,7 @@
 ## Notes:
 Program that adds two numbers and prints the result (does not take args from user).
 
-### lesson_11.asm
+### lesson_12.asm
 
 _start:
 - Setting EAX to 90
