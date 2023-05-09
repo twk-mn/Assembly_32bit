@@ -53,7 +53,7 @@ slen:
 
 nextchar:
     cmp     byte [eax], 0
-    jnz     finished
+    jz      finished
     inc     eax
     jmp     nextchar
 
@@ -72,7 +72,10 @@ sprint:
     call    slen
 
     mov     edx, eax
-    mov     edx, 1
+    pop     eax
+
+    mov     ecx, eax
+    mov     ebx, 1
     mov     eax, 4
     int     80h
 
@@ -87,9 +90,9 @@ sprintLF:
     call    sprint
 
     push    eax
-    mov     eax, 0Ah
+    mov     eax, 80Ah
     push    eax
-    mov     eax. esp
+    mov     eax, esp
     call    sprint
     pop     eax
     pop     eax

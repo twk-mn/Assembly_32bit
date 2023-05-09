@@ -1,7 +1,7 @@
 %include            'functions.asm'
 
 SECTION .data
-msg1    db  ' remainder '           ; Message string to correct the output
+msg1    db      ' remainder '           ; Message string to correct the output
 
 SECTION .text
 global  _start
@@ -17,4 +17,4 @@ _start:
     mov     eax, edx    ; move the remainder into EAX
     call    iprintLF    ; Call int print with LF func
 
-    call quit           ; exit
+    call    quit           ; exit
