@@ -20,7 +20,7 @@ nasm -f elf lesson_15.asm
 ```
 Link (for 64bit elf_i386 is req):
 ```
-ld -m elf_i386 lesson_1.o -o lesson_15
+ld -m elf_i386 lesson_15.o -o lesson_15
 ```
 Run:
 ```
