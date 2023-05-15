@@ -13,7 +13,7 @@ _start:
     mov     edx, 0      ; init the EDX (data registry to store addition)
 
 nextArg:
-    cmp     ecx, 0Ah    ; Checking if there is any arguments left, (if ECX = 0 or not)
+    cmp     ecx, 0h    ; Checking if there is any arguments left, (if ECX = 0 or not)
     jz      noMoreArgs  ; If the zero flag is set, jump to noMoreArgs
     pop     eax         ; Pop the nexty arg from the stack
     call    atoi        ; Convert the ASCii str to deci integer

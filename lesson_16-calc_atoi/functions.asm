@@ -92,7 +92,7 @@ slen:
 
 nextchar:
     cmp     byte [eax], 0
-    jnz     finished
+    jz     finished
     inc     eax
     jmp     nextchar
 
@@ -111,6 +111,9 @@ sprint:
     call    slen
 
     mov     edx, eax
+    pop     eax
+
+    mov     ecx, eax
     mov     ebx, 1
     mov     eax, 4
     int     80h
@@ -138,6 +141,6 @@ sprintLF:
 ; Exit prog rest resources
 quit:
     mov     ebx, 0
-    mov     eax, 4
+    mov     eax, 1
     int     80h
     ret
