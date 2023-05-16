@@ -73,6 +73,19 @@ iprint:
 ; void iprintLF (int numb)
 ; Interger printing func with LF (itoa)
 iprintLF:
+    call    iprint          ; Calll the int print func
+
+    push    eax
+    mov     eax, 0Ah
+    push    eax
+    mov     eax, esp
+    call    sprint
+    pop     eax
+    pop     eax
+    ret
+
+; Int slen(str msg)
+; String length cal func
 slen:
     push    ebx             ; Push EBX to store intil after teh func
     mov     ebx, eax        ; Move EAX into EBX
@@ -93,14 +106,11 @@ slen:
 sprint:
     push    edx
     push    ecx
-    push    edx
+    push    ebx
     push    eax
     call    slen
 
     mov     edx, eax
-    pop     eax
-
-    mov     ecx, eax
     pop     eax
 
     mov     ecx, eax
