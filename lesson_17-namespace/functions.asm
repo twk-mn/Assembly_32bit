@@ -5,7 +5,7 @@ atoi:
     push    ecx             ; Save ECX on the stack to restore it after the func
     push    edx             ; Save EDX on the stack to restore it after the func
     push    esi             ; Save ESI on the stack to restore it after the func
-    mov     esi, eax        ; Move pointer to to ESI from EAX (to get the number to convert)
+    mov     esi, eax        ; Move pointer to ESI from EAX (to get the number to convert)
     mov     eax, 0          ; Init EAX with the deci value of 0
     mov     ecx, 0          ; Same as with EAX
 
